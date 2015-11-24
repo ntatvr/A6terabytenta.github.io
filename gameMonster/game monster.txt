@@ -1,0 +1,7 @@
+﻿Game Monster JavaScript
+
+- game bao gồm 8 con monster ở 8 hướng (di chuyển tiến và lui) và 1 con o trung tâm (di chuyển tự do)
+- khi click vào monster sẽ phát nổ và cộng điểm.
+- khi click hụt sẽ trừ điểm.
+- lưu điểm bằng html5.
+- button bao gom: 1 nút boom (hủy tất cả monster) và 1 nút pause.

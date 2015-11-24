@@ -1,0 +1,9 @@
+﻿Tạo một form để nhập thông tin như:
+- Username
+- Password
+- Email
+- Birthday (khi click vào input sẽ hiện ra calendar của bài tập trước, 
+	    khi chọn ngày nào thì ngày đó sẽ hiện trong input)
+- 1 button submit dữ liệu lên server (server là 1 class PHP dùng để check username
+	nếu username chưa tồn tại thì sẽ trả về false, nếu đã tồn tại thì trả về true và bắt lỗi)
+- Tất cả các input phải check validate (check validate bằng javascript)

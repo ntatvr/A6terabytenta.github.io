@@ -1,0 +1,7 @@
+﻿Tạo slider hình ảnh:
+
+Bao gồm các nút:
+- Một nút previous. dùng để xem ảnh trước
+- Một nút next: xem ảnh kế tiếp
+- Các nút index, thể hiện được vị trí của ảnh trong slider. có thể click vào để hiển thị ảnh nhanh.
+

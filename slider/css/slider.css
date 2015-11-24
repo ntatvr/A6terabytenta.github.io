@@ -1,0 +1,64 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #3D3d3d;
+	color: #fff;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+}
+
+#wapSlider{
+	width: 100%;
+	height: 500px;
+	position: relative;
+	border: 1px solid #fff;
+}
+
+#wapSlider #wrapImage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#wapSlider #btnPrevious {
+	top: 45%;
+	left: 1%;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	opacity: 0.5;
+}
+
+#wapSlider #btnPrevious:hover,#wapSlider #btnNext:hover {
+	opacity: 1;
+}
+
+#wapSlider #btnNext {
+	top: 45%;
+	right: 1%;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	opacity: 0.5;
+}
+
+#wapSlider #wapCricle{
+	position: absolute;
+	bottom: 1%;
+	width: 100%;
+	height: 5%;
+	display: flex;
+}
+
+#wapSlider #wapCricle .item{
+	border-radius: 50%;
+	background: #fff;
+	width: 20px;
+	height: 20px;
+	margin-left: 0.5%;
+}

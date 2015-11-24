@@ -1,0 +1,8 @@
+﻿Tạo form hiển thị lịch:
+
+Bao gồm:
+- Hiển thị các ngày trong tháng.
+- Hiển thị ngày hiện tại.
+- Chọn tháng trước đó hoặc tháng sau đó.
+- Chọn năm trước đó hoặc năm sau đó.
+- Một combobox chọn tháng và năm nhanh.

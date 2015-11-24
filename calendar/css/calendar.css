@@ -1,0 +1,60 @@
+body {
+	background: #2D2D2D;
+}
+
+td {
+	padding: 0;
+	margin: 0;
+	width: 60px;
+	height: 30px;
+	border: 1px solid #fff;
+}
+#calendar .btn{
+	border: 1px solid #909497;
+	font-size: 15px;
+	text-align: center;
+	color: #2E86C1;
+	background: #A9CCE3;
+	cursor: pointer;
+}
+select {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.item:hover{
+	cursor: pointer;
+}
+
+#title {
+	color: red;
+	background: #bebebe;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#calendar{
+	overflow: auto;
+}
+
+#datepicker{
+	position: relative;
+	width: 200px;
+	height: 30px;
+}
+
+#datepicker input{
+ 	width: 100%;
+ 	height: 100%;
+ 	border: none;
+ 	padding-left: 10px;
+ 	font-weight: bold;
+}
+
+#datepicker img{
+	position: absolute;
+	right: 5px;
+	top: 5%;
+	height: 90%;
+}

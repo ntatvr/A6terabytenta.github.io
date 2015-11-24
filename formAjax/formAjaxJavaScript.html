@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Ajax</title>
+	<link rel="stylesheet" type="text/css" href="css/formAjax.css">
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/formAjax.js"></script>
+</head>
+<body>
+	<div id="formAjax">
+		<form action="" method="post">
+			<table class="table">
+				<tr class="tr">
+					<td class="td1">Username:</td>
+					<td class="td2"><input type="text" value="" name="username" id="username" /></td>
+					<td id="errorUsername"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Passwork:</td>
+					<td><input type="password" value="" name="password" id="password" /></td>
+					<td id="errorPassword"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Email:</td>
+					<td><input type="input" value="" name="email" id="email" /></td>
+					<td id="errorEmail"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Birthday:</td>
+					<td>
+						<div id="datepicker">
+							<input type="text" id="output" name="output" disabled="disabled" />
+							<img src="images/calendar.png" alt="images/calendar.png" onclick="openCalendar();">
+						</div>	
+						<script type="text/javascript">
+							setDateNowForInput();
+							init();
+						</script>					
+					</td>
+					<td id="errorBirthday"></td>
+				</tr>
+				<tr class="tr">
+					<td></td>
+					<td><button type="button" id="submit" name="submit" onclick="btnSubmitClick();">Submit</button> <button type="refresh">Refresh</button></td>
+					<td></td>
+				</tr>
+			</table>
+			<h1 id="results"></h1>
+		</form>
+	</div>
+</body>
+</html>
