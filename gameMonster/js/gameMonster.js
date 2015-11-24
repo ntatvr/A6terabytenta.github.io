@@ -17,7 +17,7 @@ var booleanPause = false;
 var booleanStop = false;
 var booleanBoom = true;
 var numberBoom = 3;
-var numberStop= 3;
+var numberStop = 3;
 var listBlood = new Array();
 
 var monsterImage = new Image();
@@ -31,10 +31,11 @@ bgImage.onload = function() {
 bgImage.src = "images/background.jpg";
 
 
-if(typeof(Storage) !== "underfined") {
+if (typeof(Storage) !== "underfined") {
 	localStorage.setItem("bestScore", bestScore);
 }
 
+// create stop image
 var stopImage = new Image();
 stopImage.onload = function() {
 }
@@ -73,6 +74,7 @@ bloodImage.onload = function() {
 }
 bloodImage.src = "images/blood.png";
 
+// create Object Monster
 var MonsterOne = {
 	beginX: 0,
 	beginY: 0,
@@ -195,7 +197,7 @@ var MonsterEight = {
 	startY: 190,
 	stopX: 120,
 	stopY: 190,
-	speed: 1,
+	speed: speed,
 	click: false,
 	show: false,
 	dieX: 0,
@@ -214,13 +216,15 @@ var MonsterNine = {
 	dieY:0
 }
 
-// Create Event Click
+// Create Event Click For Buttons
 footer.addEventListener("click", function(e) {
 	var locationX = e.pageX - this.offsetLeft;
 	var locationY = e.pageY - this.offsetTop;
+
+	// Button Pause
 	if (locationX > 400 && locationX < 440 && locationY > 60 && locationY < 100) {
 		console.log("PAUSE");
-		booleanStop= false;
+		booleanStop = false;
 		if (run) {
 			run = false;
 			booleanPause = true;
@@ -231,6 +235,7 @@ footer.addEventListener("click", function(e) {
 		}
 	}
 
+	// Button Restart
 	if (locationX > 450 && locationX < 490 && locationY > 60 && locationY < 100) {
 		console.log("RESTART");
 		context.clearRect(0, 0, container.width, container.height);
@@ -239,22 +244,24 @@ footer.addEventListener("click", function(e) {
 
 	}
 
+	// Button Boom
 	if (locationX > 290 && locationX < 340 && locationY > 60 && locationY < 100) {
-		if(booleanBoom) {
+		if (booleanBoom) {
 			console.log("BOOM");
 			executeActionBoom();
 			numberBoom--;
-			if(numberBoom <= 0) {
+			if (numberBoom <= 0) {
 				booleanBoom = false;
 			}
 		}
 
 	}
 
+	// Button Stop
 	if (locationX > 350 && locationX < 390 && locationY > 60 && locationY < 100) {
 		console.log("STOP");
 		booleanPause = false;
-		if(numberStop > 0) {
+		if (numberStop > 0) {
 			if (run) {
 				run = false;
 				booleanStop = true;
@@ -272,11 +279,13 @@ footer.addEventListener("click", function(e) {
 	}
 })
 
+
+// Create Event Click For Monster
 container.addEventListener("click", function (e) {
 	locationX = e.pageX - this.offsetLeft;
 	locationY = e.pageY - this.offsetTop;
 
-	if(!booleanPause) {
+	if (!booleanPause) {
 		score -= 5;
 		tempScore -= 5;
 		heart--;
@@ -331,7 +340,7 @@ container.addEventListener("click", function (e) {
 		}
 	} 
 
-	if(booleanStop) {
+	if (booleanStop) {
 		if (MonsterOne.show) {
 			executeActionStop(MonsterOne, locationX, locationY);
 		}
@@ -371,8 +380,9 @@ container.addEventListener("click", function (e) {
 }, false);
 
 
+// Execute Method Action For Button Stop
 var executeActionStop = function(monster, locationX, locationY) {
-	if(monster.click) {
+	if (monster.click) {
 		if (monster.startX < locationX && locationX < (monster.startX + monsterImage.width) && monster.startY < locationY && locationY < (monster.startY + monsterImage.height)) {
 			var soundClick = new Audio('music/audio.mp3');
 			soundClick.play();
@@ -393,15 +403,15 @@ var executeActionStop = function(monster, locationX, locationY) {
 	}
 }
 
-// Method execute event click
+// Execute Action
 function executeAction(monster, locationX, locationY) {
-	if(monster.click) {
+	if (monster.click) {
 		if (monster.startX < locationX && locationX < (monster.startX + monsterImage.width) && monster.startY < locationY && locationY < (monster.startY + monsterImage.height)) {
 			var soundClick = new Audio('music/audio.mp3');
 			soundClick.play();
 			heart++;
 			countClick++;
-			if(countClick == 30) {
+			if (countClick == 30) {
 				heart++;
 				countClick = 0;
 			}
@@ -419,7 +429,7 @@ function executeAction(monster, locationX, locationY) {
 			monster.startY = monster.beginY;
 			monster.stopX = monster.endX;
 			monster.stopY = monster.endY;
-			for(var i = 0; i < numberMonster; i++) {
+			for (var i = 0; i < numberMonster; i++) {
 				random();
 			}
 			addElementBlood(monster.dieX, monster.dieY);
@@ -428,6 +438,7 @@ function executeAction(monster, locationX, locationY) {
 	}
 }
 
+// Create element blood
 var addElementBlood = function(initX, initY) {
 	var Blood = {
 		initX: initX,
@@ -508,11 +519,11 @@ var random = function() {
 	}
 }
 
-
+// Create Lever
 var executeLever = function() {
 	var temp = tempScore/100;
 	console.log(parseInt(temp));
-	switch(parseInt(temp)) {
+	switch (parseInt(temp)) {
 		case 1:
 		speed = 2;
 		numberMonster = 2;
@@ -604,7 +615,7 @@ var executeActionBoom = function(monster) {
 	var soundBoom = new Audio('music/boom.mp3');
 	soundBoom.play();
 	render();
-	for(var i = 0; i < numberMonster; i++) {
+	for (var i = 0; i < numberMonster; i++) {
 		random();
 	}
 }
@@ -704,7 +715,7 @@ var updateMonsterCenter = function(monster) {
 }
 
 var updateBlood = function() {
-	if(listBlood.length > 0) {
+	if (listBlood.length > 0) {
 		for (var position = 0; position < listBlood.length; position++) {
 			context.drawImage(bloodImage, listBlood[position].initX, listBlood[position].initY);
 		}
@@ -757,7 +768,7 @@ var render = function() {
 		context.drawImage(monsterImage, MonsterNine.startX, MonsterNine.startY);
 	}
 
-	contextAction.clearRect(0,0,footer.width, footer.height);
+	contextAction.clearRect(0, 0, footer.width, footer.height);
 	contextAction.fillStyle = "rgb(29, 214, 4)";
 	contextAction.font = "20px Arial";
 	contextAction.fillText("Score: " + score, 10, 30);
@@ -765,9 +776,9 @@ var render = function() {
 	contextAction.fillText("Heart: ", 10, 60);
 	contextAction.fillText("Speed: " + speed, 10, 90);
 	var temp = 0;
-	for(var i = 0; i < heart; i++) {
+	for (var i = 0; i < heart; i++) {
 		contextAction.drawImage(heartitem, (70 + temp), 45, 20, 20);
-		temp+= 20;
+		temp += 20;
 	}
 	contextAction.drawImage(boomImage, 290, 60, 50, 40);
 	contextAction.drawImage(stopImage, 350, 60, 40, 40);
@@ -779,13 +790,13 @@ var render = function() {
 	contextAction.fillText(numberStop, 360, 75);
 	contextAction.fillStyle = "rgb(230, 221, 240)";
 	contextAction.font = "20px Arial";
-	if(booleanPause) {
+	if (booleanPause) {
 		context.fillStyle = "#FFFFFF";
 		context.font = "50px Arial";
 		context.fillText("Pause!!!", 180, 240);
 	}
 
-	if(booleanStop) {
+	if (booleanStop) {
 		context.fillStyle = "#FFFFFF";
 		context.font = "50px Arial";
 		context.fillText("STOP!!!", 180, 240);
@@ -830,7 +841,7 @@ var main = function() {
 		context.fillText("Best score = " + localStorage.getItem("bestScore"), 130, 280);
 	} else if (heart == 0) {
 		var temp = parseInt(localStorage.getItem("bestScore"));
-		if(temp < score) {
+		if (temp < score) {
 			localStorage.setItem("bestScore", score);
 		}
 		context.fillStyle = "#FFFFFF";
