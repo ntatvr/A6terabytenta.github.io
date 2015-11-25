@@ -271,6 +271,11 @@ footer.addEventListener("click", function(e) {
 				main();
 				booleanStop = false;
 			}
+			setTimeout(function() {
+				run = true;
+				main();
+				booleanStop = false;
+			}, 2000)
 		} else {
 			run = true;
 			main();
@@ -525,23 +530,27 @@ var executeLever = function() {
 	console.log(parseInt(temp));
 	switch (parseInt(temp)) {
 		case 1:
-		speed = 2;
-		numberMonster = 2;
+		speed = 1;
+		numberMonster = 1;
 		break;
 		case 2:
 		speed = 2;
-		numberMonster = 3;
+		numberMonster = 2;
 		break;
 		case 3:
-		speed = 2;
+		speed = 3;
 		numberMonster = 3;
+		break;
+		case 4:
+		speed = 4;
+		numberMonster = 4;
 		break;
 		case 5:
 		speed = 5;
-		numberMonster = 4;
+		numberMonster = 5;
 		break;
-		case 7:
-		speed = 8;
+		case 6:
+		speed = 6;
 		numberMonster = 6;
 		break;
 	}
@@ -688,6 +697,7 @@ var updateMonster = function(monster) {
 		monster.stopX = monster.endX;
 		monster.stopY = monster.endY;
 		score -= 10;
+		heart--;
 		random();
 	}
 }
@@ -860,5 +870,7 @@ var main = function() {
 }
 
 var windows = window;
-requestAnimationFrame = windows.requestAnimationFrame || windows.webkitRequestAnimationFrame || windows.msRequestAnimationFrame || windows.mozRequestAnimationFrame;
+requestAnimationFrame = windows.requestAnimationFrame || windows.webkitRequestAnimationFrame 
+|| windows.msRequestAnimationFrame || windows.mozRequestAnimationFrame;
+
 main();
