@@ -3,78 +3,90 @@ var footer = document.getElementById("footer");
 var context = container.getContext("2d");
 var contextAction = footer.getContext("2d");
 document.body.appendChild(container);
-var score = 10; // score
-var tempScore = 10;
-var bgready = false; // background container
-var run = true;
-var numberMonster = 1; // number monstar random
+var score = 10; // use to caculate score
+var tempScore = 10; // use to caculate lever
+var bgready = false; // use to draw background canvas
+var run = true;	// use of confirm activity in function main
+var numberMonster = 1; // use to confirm random number monster
 var bgImage = new Image();
-var bestScore = 10;
-var heart = 5;
-var speed = 1; // speed
+var bestScore = 10; // use to caculate best score
+var heart = 5;	// number heart
+var speed = 1; // speed run
 var countClick = 0;
-var booleanPause = false;
-var booleanStop = false;
-var booleanBoom = true;
+var booleanPause = false; // pause
+var booleanStop = false; // stop
+var booleanBoom = true; // boom
 var numberBoom = 3;
 var numberStop = 3;
 var listBlood = new Array();
 
+// use to draw monster
 var monsterImage = new Image();
 monsterImage.onload = function() {
 }
 monsterImage.src = "images/monster.gif";
 
+
+// user to draw background
 bgImage.onload = function() {
 	bgready = true;
 }
 bgImage.src = "images/background.jpg";
 
-
-if (typeof(Storage) !== "underfined") {
-	localStorage.setItem("bestScore", bestScore);
-}
-
-// create stop image
+//use to draw stop button image
 var stopImage = new Image();
 stopImage.onload = function() {
 }
 stopImage.src = "images/stop.png";
 
-// create boom image
+//use to draw boom button image
 var boomImage = new Image();
 boomImage.onload = function() {
 }
 boomImage.src = "images/boom.gif";
 
-//create pause image
+//use to draw pause button image
 var pauseImage = new Image();
 pauseImage.onload = function() {
 }
 pauseImage.src = "images/pause.png";
 
 
-//create restart image
+//use to draw restart button image
 var restartImage = new Image();
 restartImage.onload = function() {
 }
 restartImage.src = "images/restart.png";
 
 
-//create heart image
+//use to draw haert
 var heartitem = new Image();
 heartitem.onload = function() {
 }
 heartitem.src = "images/heart.png";
 
 
-//create blood image
+//use to draw blood
 var bloodImage = new Image();
 bloodImage.onload = function() {
 }
 bloodImage.src = "images/blood.png";
 
-// create Object Monster
+if (typeof(Storage) !== "underfined") {
+	localStorage.setItem("bestScore", bestScore);
+}
+
+/*  Create Object Monster
+	- beginX, startX: start position for X 
+	- beginY, startY: start position for Y
+	- endX, stopX: stop position for X 
+	- endY, stopY: stop position for Y 
+	- show: use to confirm show monster
+	- click: cofirm position monster
+	- beginX: start position for X 
+	- dieX: die position for X 
+	- dieY: die position for Y
+*/
 var MonsterOne = {
 	beginX: 0,
 	beginY: 0,
@@ -216,12 +228,12 @@ var MonsterNine = {
 	dieY:0
 }
 
-// Create Event Click For Buttons
+// Create event for buttons
 footer.addEventListener("click", function(e) {
 	var locationX = e.pageX - this.offsetLeft;
 	var locationY = e.pageY - this.offsetTop;
 
-	// Button Pause
+	// Button pause
 	if (locationX > 400 && locationX < 440 && locationY > 60 && locationY < 100) {
 		console.log("PAUSE");
 		booleanStop = false;
@@ -235,7 +247,7 @@ footer.addEventListener("click", function(e) {
 		}
 	}
 
-	// Button Restart
+	// Button restart
 	if (locationX > 450 && locationX < 490 && locationY > 60 && locationY < 100) {
 		console.log("RESTART");
 		context.clearRect(0, 0, container.width, container.height);
@@ -244,7 +256,7 @@ footer.addEventListener("click", function(e) {
 
 	}
 
-	// Button Boom
+	// Button boom
 	if (locationX > 290 && locationX < 340 && locationY > 60 && locationY < 100) {
 		if (booleanBoom) {
 			console.log("BOOM");
@@ -257,7 +269,7 @@ footer.addEventListener("click", function(e) {
 
 	}
 
-	// Button Stop
+	// Button stop
 	if (locationX > 350 && locationX < 390 && locationY > 60 && locationY < 100) {
 		console.log("STOP");
 		booleanPause = false;
@@ -285,7 +297,7 @@ footer.addEventListener("click", function(e) {
 })
 
 
-// Create Event Click For Monster
+// Create event for monsters
 container.addEventListener("click", function (e) {
 	locationX = e.pageX - this.offsetLeft;
 	locationY = e.pageY - this.offsetTop;
@@ -385,7 +397,7 @@ container.addEventListener("click", function (e) {
 }, false);
 
 
-// Execute Method Action For Button Stop
+// Execute function after click event for button stop
 var executeActionStop = function(monster, locationX, locationY) {
 	if (monster.click) {
 		if (monster.startX < locationX && locationX < (monster.startX + monsterImage.width) && monster.startY < locationY && locationY < (monster.startY + monsterImage.height)) {
@@ -408,7 +420,7 @@ var executeActionStop = function(monster, locationX, locationY) {
 	}
 }
 
-// Execute Action
+// Execute function after click event for monster
 function executeAction(monster, locationX, locationY) {
 	if (monster.click) {
 		if (monster.startX < locationX && locationX < (monster.startX + monsterImage.width) && monster.startY < locationY && locationY < (monster.startY + monsterImage.height)) {
@@ -422,7 +434,6 @@ function executeAction(monster, locationX, locationY) {
 			}
 			if (countClick % 5 == 0) {
 				MonsterNine.show =  true;
-				console.log("show MonsterNine");
 			}
 			score += 15;
 			tempScore += 15;
@@ -452,7 +463,7 @@ var addElementBlood = function(initX, initY) {
 	listBlood[listBlood.length] = Blood;
 }
 
-// method random monster
+// Function random monster
 var random = function() {
 	if (!MonsterOne.show) {
 		refreshMonster(MonsterOne);
@@ -524,9 +535,9 @@ var random = function() {
 	}
 }
 
-// Create Lever
+// Create lever
 var executeLever = function() {
-	var temp = tempScore/100;
+	var temp = tempScore / 100;
 	console.log(parseInt(temp));
 	switch (parseInt(temp)) {
 		case 1:
@@ -556,6 +567,7 @@ var executeLever = function() {
 	}
 }
 
+// // Execute function after click event for button boom
 var executeActionBoom = function(monster) {
 	if (MonsterOne.show) {
 		score += 10;
@@ -629,7 +641,7 @@ var executeActionBoom = function(monster) {
 	}
 }
 
-// method refresh monster
+// Function refresh monsters
 function refreshMonster(monster) {
 	monster.show = false;
 	monster.startX = monster.beginX;
@@ -639,7 +651,7 @@ function refreshMonster(monster) {
 	monster.speed = speed;
 }
 
-// method restart game
+// Execute function after click event for button restart
 var restart = function() {
 	speed = 1;
 	run = true;
@@ -666,7 +678,7 @@ var restart = function() {
 	MonsterOne.show = true;
 }
 
-// method update monster
+// Update element function of monsters
 var updateMonster = function(monster) {
 	monster.click = true;
 
@@ -702,7 +714,6 @@ var updateMonster = function(monster) {
 	}
 }
 
-// method update monster in center canvas
 var updateMonsterCenter = function(monster) {
 	if (monster.startX > monster.stopX) {
 		monster.startX -= monster.speed;
@@ -733,7 +744,7 @@ var updateBlood = function() {
 	
 }
 
-// method draw all element in canvas
+// Function draw all element in canvas
 var render = function() {
 	if (bgready) {
 		context.drawImage(bgImage, 0, 0, container.width, container.height);
@@ -813,7 +824,6 @@ var render = function() {
 	}
 }
 
-// method run
 var main = function() {
 	executeLever();
 	if (MonsterOne.show) {
