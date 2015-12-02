@@ -5,6 +5,7 @@ var dateNow = new Date();
 var dateCheck = new Date().getDate();
 var monthCheck = new Date().getMonth();
 var yearCheck = new Date().getFullYear();
+var positionDayOne = 0;
 var results = "";
 var positionDateNow;
 
@@ -83,7 +84,7 @@ function init() {
 		var month_now = new Date().getMonth();
 		var yearNow = new Date().getFullYear();
 		var day = new Date(yearCheck, monthCheck, 1).getDay();
-
+		positionDayOne = parseInt(day);
 		var previous_month = monthCheck - 1;
 		var next_month = monthCheck + 1;
 
@@ -104,9 +105,6 @@ function init() {
 		var numberDayOfPreviousMonth = numberDayOfMonth[previous_month];
 		var numberDayOfNextMonth = numberDayOfMonth[next_month];
 
-		console.log(numberDayOfPreviousMonth);
-		console.log(numberDayOfNextMonth);
-
 		var position = 1;
 		var count = 1;
 		var check = false;
@@ -119,7 +117,6 @@ function init() {
 					check = true;
 				}
 				if(check == true && position <= numberDay) {
-					console.log("date: "+ (position + day));
 					document.getElementById("item" + (position + day)).innerHTML = position;
 					document.getElementById("item" + (position + day)).style.background = "#FBFCFC";
 					if(dateNow == position && month_now == monthCheck && yearNow == yearCheck) {
@@ -133,23 +130,45 @@ function init() {
 			}
 		}
 		for(var i = positionStart; i > 0; i--) {
-			console.log("i: "+i);
 			document.getElementById("item" + (i)).innerHTML = numberDayOfPreviousMonth--;
 			document.getElementById("item" + (i)).style.color = "#ffffff";
 		}
 		for(var j = 1; j <= (42 - positionStop); j++) {
-			console.log("j: "+ (j + positionStop));
 			document.getElementById("item" + (j + positionStop)).innerHTML = j;
 			document.getElementById("item" + (j + positionStop)).style.color = "#ffffff";
 		}
 	}
 
-	function checkDay(day) {
-		var day = document.getElementById("item" + day).innerHTML;
-		if(day != null && day != "") {
-			var results = day + "/" + (parseInt(document.getElementById("months").value) + 1) + "/" + yearCheck;
-			document.getElementById("output").value = results;
+	function checkDay(position) {
+		var previous_month = monthCheck;
+		var month_now = monthCheck + 1;
+		var next_month = monthCheck + 2
+		var year = yearCheck;
+		var day = document.getElementById("item" + position).innerHTML;
+
+		if(previous_month == 0) {
+			previous_month = 12;
 		}
+
+		if(next_month == 13) {
+			next_month = 1;
+		}
+
+		if(parseInt(day) > position) {
+			if(previous_month == 12) {
+				year--;
+			}
+			var results = day + "/" + previous_month + "/" + year;
+		} else if (parseInt(day) < (position - positionDayOne)) {
+			if(next_month == 1) {
+				year++;
+			}
+			var results = day + "/" + next_month + "/" + year;
+		} else {
+			var results = day + "/" + month_now + "/" + year;
+		}
+
+		document.getElementById("output").value = results;
 	}
 
 	function changeMonth() {

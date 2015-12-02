@@ -7,6 +7,7 @@ var monthCheck = new Date().getMonth();
 var yearCheck = new Date().getFullYear();
 var results = "";
 var positionDateNow;
+var positionDayOne = 0;
 
 function setDateNowForInput() {
 	results = dateCheck + "/" + (monthCheck + 1) + "/" + yearCheck;
@@ -83,7 +84,7 @@ function init() {
 		var month_now = new Date().getMonth();
 		var yearNow = new Date().getFullYear();
 		var day = new Date(yearCheck, monthCheck, 1).getDay();
-
+		positionDayOne = day;
 		var previous_month = monthCheck - 1;
 		var next_month = monthCheck + 1;
 
@@ -144,12 +145,36 @@ function init() {
 		}
 	}
 
-	function checkDay(day) {
-		var day = document.getElementById("item" + day).innerHTML;
-		if(day != null && day != "") {
-			var results = day + "/" + (parseInt(document.getElementById("months").value) + 1) + "/" + yearCheck;
-			document.getElementById("output").value = results;
+	function checkDay(position) {
+		var previous_month = monthCheck;
+		var month_now = monthCheck + 1;
+		var next_month = monthCheck + 2
+		var year = yearCheck;
+		var day = document.getElementById("item" + position).innerHTML;
+
+		if(previous_month == 0) {
+			previous_month = 12;
 		}
+
+		if(next_month == 13) {
+			next_month = 1;
+		}
+
+		if(parseInt(day) > position) {
+			if(previous_month == 12) {
+				year--;
+			}
+			var results = day + "/" + previous_month + "/" + year;
+		} else if (parseInt(day) < (position - positionDayOne)) {
+			if(next_month == 1) {
+				year++;
+			}
+			var results = day + "/" + next_month + "/" + year;
+		} else {
+			var results = day + "/" + month_now + "/" + year;
+		}
+
+		document.getElementById("output").value = results;
 	}
 
 	function changeMonth() {
