@@ -63,6 +63,7 @@
 }
 
 #calendar table {
+	width: 100%;
 	margin-left: 5%;
 	font-size: 12px;
 	background: #D7DBDD;
