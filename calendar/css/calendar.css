@@ -9,7 +9,7 @@ td {
 	height: 30px;
 	border: 1px solid #fff;
 }
-#calendar .btn{
+#calendar .btn {
 	border: 1px solid #909497;
 	font-size: 15px;
 	text-align: center;
@@ -23,7 +23,7 @@ select {
 	cursor: pointer;
 }
 
-.item:hover{
+.item:hover {
 	cursor: pointer;
 }
 
@@ -34,17 +34,17 @@ select {
 	font-size: 25px;
 }
 
-#calendar{
+#calendar {
 	overflow: auto;
 }
 
-#datepicker{
+#datepicker {
 	position: relative;
 	width: 200px;
 	height: 30px;
 }
 
-#datepicker input{
+#datepicker input {
  	width: 100%;
  	height: 100%;
  	border: none;
@@ -52,7 +52,7 @@ select {
  	font-weight: bold;
 }
 
-#datepicker img{
+#datepicker img {
 	position: absolute;
 	right: 5px;
 	top: 5%;

@@ -7,19 +7,19 @@ body {
 	color: #fff;
 }
 
-img{
+img {
 	width: 100%;
 	height: 100%;
 }
 
-#wapSlider{
+#wapSlider {
 	width: 100%;
 	height: 500px;
 	position: relative;
 	border: 1px solid #fff;
 }
 
-#wapSlider #wrapImage{
+#wapSlider #wrapImage {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -47,7 +47,7 @@ img{
 	opacity: 0.5;
 }
 
-#wapSlider #wapCricle{
+#wapSlider #wapCricle {
 	position: absolute;
 	bottom: 1%;
 	width: 100%;
@@ -55,7 +55,7 @@ img{
 	display: flex;
 }
 
-#wapSlider #wapCricle .item{
+#wapSlider #wapCricle .item {
 	border-radius: 50%;
 	background: #fff;
 	width: 20px;

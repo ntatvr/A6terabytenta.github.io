@@ -31,7 +31,7 @@
 	box-shadow: 1px 1px 2px #ABEBC6, 0 0 10px #ABEBC6, 0 0 5px #ABEBC6;
 }
 
-#formAjax .table .tr button{
+#formAjax .table .tr button {
 	margin-left: 5%;
 	height: 30px;
 	background: #2471A3;
@@ -83,7 +83,7 @@
 	height: 100%;
 }
 
-#calendar .btn{
+#calendar .btn {
 	border: 1px solid #909497;
 	font-size: 15px;
 	text-align: center;

@@ -526,7 +526,7 @@ var random = function() {
 
 // Create Lever
 var executeLever = function() {
-	var temp = tempScore/100;
+	var temp = tempScore / 100;
 	console.log(parseInt(temp));
 	switch (parseInt(temp)) {
 		case 1:

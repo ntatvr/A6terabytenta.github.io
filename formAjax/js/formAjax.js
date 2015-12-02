@@ -52,7 +52,7 @@ var checkEmail = false;
 			} else if(!checkValidateEmail(email.value)) {
 				errorEmail.innerHTML = "Email wrong format";
 			} else {
-				checkEmail= true;
+				checkEmail = true;
 			}
 		}
 

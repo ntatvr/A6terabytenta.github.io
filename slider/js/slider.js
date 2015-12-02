@@ -15,7 +15,7 @@ var interval_obj = setInterval(function() {
 }, 3000);
 
 function createSlider() {
-	document.write("<DIV ID= 'wapSlider'>");
+	document.write("<DIV ID='wapSlider'>");
 	drawImages(currentImage);
 	drawbtnPrevious("previous.png");
 	drawbtnNext("next.png");
@@ -24,27 +24,27 @@ function createSlider() {
 }
 
 function drawImages(url) {
-	document.write("<DIV ID= 'wrapImage'>");
-	document.write("<img ID= 'image' src= 'images/" + url + "'alt= 'images/" + url + "'/>");
+	document.write("<DIV ID='wrapImage'>");
+	document.write("<img ID='image' src='images/" + url + "' alt='images/" + url + "'/>");
 	document.write("</DIV>");
 }
 
 function drawbtnPrevious(url) {
-	document.write("<DIV ID= 'btnPrevious' onClick= 'btnPreviousClick();'>");
-	document.write("<img src= 'images/" + url + "'alt= 'images/" + url + "'/>");
+	document.write("<DIV ID='btnPrevious' onClick='btnPreviousClick();'>");
+	document.write("<img src= 'images/" + url + "' alt= 'images/" + url + "'/>");
 	document.write("</DIV>");
 }
 
 function drawbtnNext(url) {
-	document.write("<DIV ID= 'btnNext' onClick= 'btnNextClick();'>");
-	document.write("<img src= 'images/" + url + "'alt= 'images/" + url + "'/>");
+	document.write("<DIV ID='btnNext' onClick='btnNextClick();'>");
+	document.write("<img src= 'images/" + url + "' alt= 'images/" + url + "'/>");
 	document.write("</DIV>");
 }
 
 function drawCricle() {
 	document.write("<DIV ID= 'wapCricle'>");
 	for(var i = 0; i < images.length; i++) {
-		document.write("<DIV CLASS= 'item' ID= 'item" + i + "'onClick= 'action(" + i + ");'></DIV>");
+		document.write("<DIV CLASS='item' ID='item" + i + "'onClick='action(" + i + ");'></DIV>");
 		document.getElementById("item" + i).style.background = "#FFFFFF";	
 	};
 	document.write("</DIV>")
@@ -62,16 +62,16 @@ function action(position) {
 function btnPreviousClick(currentImage) {
 	if((position - 1) < 0) {
 		position = images.length - 1;
-	}else{
+	} else {
 		position = currentPosition - 1;
 	}
 	action(position);
 }
 
 function btnNextClick(currentImage) {
-	if((position + 1) >(images.length - 1)) {
+	if((position + 1) > (images.length - 1)) {
 		position = 0;
-	}else{
+	} else {
 		position = currentPosition + 1;
 	}
 	action(position);
