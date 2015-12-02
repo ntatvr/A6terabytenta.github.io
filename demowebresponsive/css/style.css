@@ -259,12 +259,12 @@ div.menu ul li.menu_7 a.active {
 }
 #content #content_left {
 	width: 700px;
-	float: left;
+	float: left;s
 }
 
 #content #content_left .titles {
-	width: 680px;
-	padding: 5px 10px;
+	width: 690px;
+	padding: 5px 5px 5px 10px;
 	background: url("../images/line_title.jpg") no-repeat left bottom;
 }
 #content #content_left .titles img:hover {
