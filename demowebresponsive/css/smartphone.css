@@ -1,0 +1,147 @@
+@media screen and (max-width: 644px) {
+	body {
+		text-align: center;
+	}
+	#header {
+		width: 100%;
+		min-width: 50%;
+		text-align: center;
+	}
+
+	#header p.p{
+		margin-top: 50px;
+	}
+
+	#header .header_logo {
+		margin-top: 10px;
+		float: none;
+		width: 100%;
+	}
+
+	#header .header_infor {
+		margin-top: 10px;
+		float: none;
+		text-align: center;
+	}
+
+	.nav {
+		display: none;
+	}
+
+	a.subNav {
+		text-decoration: none;
+	}
+
+	a.subNav:hover {
+		text-decoration: underline;
+	}
+
+	/* content */
+	#content {
+		background: none;
+		text-align: left;
+	}
+	#content #center {
+		width: 100%;
+	}
+	#content #banner {
+		display: none;
+	}
+	#content #content_left {
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+	#content #content_left .titles {
+		text-align: left;
+	}
+	#content #content_left .infor img {
+		float: none;
+		margin: 10px 0;
+	}
+
+	#content #content_left .infor .information {
+		padding: 0 1%;
+		width: 98%;
+		float: none;
+		text-align: left;
+	}
+	#content #content_left .infor .information p {
+		width: 100%;
+	}
+
+	#content #content_left #items {
+		width: 100%;
+	}
+
+	#content #content_left #items .item {
+		margin-right: 0px;
+		margin: 5px;
+		float: none;
+	}
+
+	#content #content_right {
+		float: none;
+		text-align: center;
+		margin: 25px auto;
+	}
+
+	#content #content_left .new {
+		display: block;
+		text-align: left;
+		margin: 0 2%;
+		width: 96%;
+		font-size: 14px;
+	}
+
+	#content #content_left .new .date {
+		float: left;
+		clear: none;
+		width: 96%;
+		margin-bottom: 5px;
+	}
+	#content #content_left .new .note {
+		width: 96%;
+		padding-left: 15px;
+	}
+
+	#content #content_left .titles {
+		width: 93%;
+		padding: 1% 2%;
+		margin: 0 1%;
+	}
+	/* footer */
+	#footer #inner {
+		width: 100%;
+		text-align: left;
+	}
+	#footer #inner {
+		overflow: auto;
+	}
+
+	#footer #inner #information {
+		float: none;
+		font-size: 12px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+
+	#footer #inner #ftmenu_1 {
+		float: none;
+		overflow: auto;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
+	#footer #inner #ftmenu_2 {
+		width: 100%;
+		float: none;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
+	#copyright {
+		padding-bottom: 70px;
+	}
+}
