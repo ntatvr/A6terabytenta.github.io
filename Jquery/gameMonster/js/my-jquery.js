@@ -17,7 +17,11 @@ $(document).ready(function() {
 	var booleanGameOver = false;
 
 	if (typeof(Storage) !== "underfined") {
-		localStorage.setItem("highScore", highScore);
+		if(!sessionStorage.getItem("highScore")){
+			sessionStorage.setItem("highScore", highScore);
+		} else {
+			bestScore = sessionStorage.getItem("highScore");
+		}
 	}
 
 	/*
@@ -354,7 +358,7 @@ $(document).ready(function() {
 
 		var setHighScore = function() {
 			highScore += 10;
-			$("span.highScore").html(localStorage.getItem("highScore"));
+			$("span.highScore").html(sessionStorage.getItem("highScore"));
 		}
 
 		var setBlood = function(locationX, locationY) {
@@ -624,9 +628,9 @@ $(document).ready(function() {
 		}
 
 		var gameOver = function() {
-			var bestScore = parseInt(localStorage.getItem("highScore"));
+			var bestScore = parseInt(sessionStorage.getItem("highScore"));
 			if(score > bestScore) {
-				localStorage.setItem("highScore", score);
+				sessionStorage.setItem("highScore", score);
 			}
 			booleanGameOver = true;
 			hideAllMonster();
