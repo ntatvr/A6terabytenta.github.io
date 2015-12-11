@@ -577,8 +577,8 @@ $(document).ready(function() {
 	var getLocationDie = function(monster) {
 		var tempMonster = monster.id;
 		var monsterOffset = tempMonster.offset();
-		var positionX = monsterOffset.left;
-		var positionY = monsterOffset.top;
+		var positionX = monsterOffset.left - offset.left;
+		var positionY = monsterOffset.top - offset.top;
 		setBlood(positionX - 25, positionY);
 		setScore();
 	}
