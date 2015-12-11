@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar Jquery UI</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+</head>
+<body>
+	<input type="text" id="datepicker" />
+
+	<script type="text/javascript" src="js/external/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#datepicker").datepicker ({
+				showWeek: true,
+				showAnim: "slide"
+			});
+		});
+	</script>
+</body>
+</html>

@@ -250,7 +250,7 @@ footer.addEventListener("click", function(e) {
 			console.log("BOOM");
 			executeActionBoom();
 			numberBoom--;
-			if (numberBoom <= 0) {
+			if (numberBoom == 0) {
 				booleanBoom = false;
 			}
 		}
@@ -651,9 +651,9 @@ var restart = function() {
 	heart = 5;
 	numberBoom = 3;
 	numberStop = 3;
-	var booleanPause = false;
-	var booleanStop = false;
-	var booleanBoom = true;
+	booleanPause = false;
+	booleanStop = false;
+	booleanBoom = true;
 	listBlood = new Array();
 	refreshMonster(MonsterOne);
 	refreshMonster(MonsterTwo);

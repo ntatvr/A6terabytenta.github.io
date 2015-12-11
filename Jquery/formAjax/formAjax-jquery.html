@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar Jquery UI</title>
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="formAjax">
+		<form action="" method="post">
+			<table class="table">
+				<tr class="tr">
+					<td class="td1">Username:</td>
+					<td class="td2"><input type="text" value="" name="username" id="username" /></td>
+					<td class="error" id="errorUsername"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Passwork:</td>
+					<td class="td2"><input type="password" value="" name="password" id="password" /></td>
+					<td class="error" id="errorPassword"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Email:</td>
+					<td class="td2"><input type="text" value="" name="email" id="email" /></td>
+					<td class="error" id="errorEmail"></td>
+				</tr>
+				<tr class="tr">
+					<td class="td1">Birthday:</td>
+					<td class="td2">
+						<input type="text" id="datepicker" name="datepicker"/>
+					</td>
+				</tr>
+				<tr class="tr">
+					<td></td>
+					<td class="button"><button type="button" id="btnSubmit" name="btnSubmit">Submit</button> <button type="refresh">Refresh</button></td>
+					<td></td>
+				</tr>
+			</table>
+			<h1 id="results"></h1>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="js/external/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/my-jquery.js"></script>
+</body>
+</html>

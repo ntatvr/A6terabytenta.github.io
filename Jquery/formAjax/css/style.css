@@ -1,0 +1,77 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#formAjax {
+	width: 700px;
+}
+
+#formAjax table.table {
+	width: 100%;
+}
+
+#formAjax table.table tr.tr {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+#formAjax table.table tr.tr td.td1 {
+	width: 20%;
+	line-height: 50px;
+	text-align: right;
+	font-weight: bold;
+	color: #1fa61b;
+}
+
+#formAjax table.table tr.tr td.td2 {
+	width: 50%;
+	padding: 5px 0;
+}
+
+#formAjax table.table tr.tr td input {
+	width: 96%;
+	margin-left: 2%;
+	height: 40px;
+	padding: 1%;
+	border: none;
+	background: rgba(177, 255, 153, 0.5);
+	border-radius: 5px;
+	color: #d1609e;
+	font-size: 20px;
+}
+
+#formAjax td.button {
+	width: 40%;
+	padding: 5px 0;
+}
+
+#formAjax td.button button {
+	width: 120px;
+	height: 40px;
+	margin-left: 5px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: #fff;
+	background: rgb(65, 179, 224);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#formAjax td.button button:hover {
+	background: rgb(46, 105, 194);
+}
+
+#formAjax td.button button:active {
+	border-radius: 5px;
+}
+
+#formAjax table.table tr.tr td.error {
+	width: 30%;
+	color: rgb(227, 50, 50);
+	font-size: 20px;
+	line-height: 20px;
+	padding: 5px 0;
+}

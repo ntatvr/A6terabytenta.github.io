@@ -1,0 +1,135 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#wrap {
+	width: 500px;
+	height: 570px;
+	margin: 0 auto;
+	border: 5px solid rgba(11, 24, 126, 0.9); 
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+}
+#screen {
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.8);
+	position: relative;
+}
+
+#screen .gameOver, #screen .pause {
+	position: absolute;
+	top: 200px;
+	left: 100px;
+	font-size: 50px;
+	z-index: 4;
+	color: white;
+	display: none;
+}
+
+#screen img.blood {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+}
+
+#screen img.monster {
+	position: absolute;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#footer {
+	width: 500px;
+	height: 70px;
+	background: rgba(74, 189, 180, 1);
+	position: relative;
+	font-family: "Proxima-Nova", "League Gothic";
+	font-size: 30px;
+}
+
+#footer p {
+	color: rgb(16,92,9);
+}
+
+#footer span {
+	color: rgb(236,59,104);
+}
+
+#footer .heart {
+	position: absolute;
+	right: 5px;
+	bottom: 0px;
+}
+
+#footer .heart img {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+}
+
+#footer #btnPause {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -25px;
+	right: 5px;
+	cursor: pointer;
+	z-index: 3;
+	opacity: 0.9;
+}
+
+#footer #btnPause:hover {
+	width: 56px;
+	height: 56px;
+	top: -28px;
+	right: 2px;
+	opacity: 1;
+}
+
+#footer #btnRestart {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -25px;
+	right: 60px;
+	cursor: pointer;
+	z-index: 3;
+	opacity: 0.9;
+}
+
+#footer #btnRestart:hover {
+	width: 56px;
+	height: 56px;
+	top: -28px;
+	right: 57px;
+	opacity: 1;
+}
+
+#footer #btnBoom {
+	width: 60px;
+	height: 60px;
+	background: url("../images/bomb.png") no-repeat;
+	position: absolute;
+	top: -33px;
+	right: 117px;
+	cursor: pointer;
+	z-index: 3;
+	opacity: 0.9;
+	text-align: center;
+}
+
+#footer #btnBoom:hover {
+	opacity: 1;
+}
+
+#footer .numberBoom {
+	margin: 10px 5px 0 0;
+	color: rgb(219,219,219);
+	font-size: 45px;
+	line-height: 60px;
+	font-weight: bold;
+}

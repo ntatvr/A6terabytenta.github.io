@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider Jquery</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/my-jquery.js"></script>
+</head>
+<body>
+	<div id="wrap_slider">
+		<ul class="images">
+			<li class="image0"><img class="img" src="images/image_0.jpg" alt="images/image_0.jpg"></li>
+			<li class="image1"><img class="img" src="images/image_1.jpg" alt="images/image_1.jpg"></li>
+			<li class="image2"><img class="img" src="images/image_2.jpg" alt="images/image_2.jpg"></li>
+			<li class="image3"><img class="img" src="images/image_3.jpg" alt="images/image_3.jpg"></li>
+		</ul>
+		<div class="pointer">
+			<div class="btn" id="btn0" onclick="$(this).onClick(0);"></div>
+			<div class="btn" id="btn1" onclick="$(this).onClick(1);"></div>
+			<div class="btn" id="btn2" onclick="$(this).onClick(2);"></div>
+			<div class="btn" id="btn3" onclick="$(this).onClick(3);"></div>
+		</div>
+		<div class="btn_previous"><img src="images/previous.png" alt="images/previous.png"/></div>
+		<div class="btn_next"><img src="images/next.png" alt="images/next.png" /></div>
+	</div>
+	
+</body>
+</html>
