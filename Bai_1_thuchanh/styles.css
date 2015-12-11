@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Verdana, "Arial", Helvetica, sans-serif;
+  overflow: auto;
+}
+
+p, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: #cccccc;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+
+h2, h3{
+  color: #ffff00;
+  font-family: "Courier", Helvetica, serif;
+}
+
+#container {
+  border: 1px solid #ededed;
+  background-color: #2D2F35;
+}
+
+#container #header {
+  background-color: #2D2F35;
+  padding-left: 10px;
+}
+
+#container #content {
+  width: 100%;
+  background-color: #2D2F35;
+}
+
+#container #content #our_product {
+  height: 300px;
+  background-image: url("images/bg_home_intro.gif");
+  border-top: 1px solid #474a51;
+  border-bottom: 1px solid #474a51;
+  padding: 0 10%;
+}
+
+#container #content #our_product #information {
+  width: 39%;
+  float: left;
+  clear: right;
+}
+
+#container #content #our_product #information p {
+  margin-top:40px;
+}
+
+#container #content #our_product img {
+  float: right;
+  clear: none;
+}
+
+#container #content #images {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8%;
+  overflow: auto;
+  padding-top: 30px;
+}
+
+#container #content #images .item {
+  float: left;
+  clear: right;
+}
+
+#container #content #images .item {
+  position: relative;
+  margin-right: 5%;
+}
+
+#container #content #images .item .images {
+  width: 200px;
+  float: right;
+  margin-bottom:10px;
+}
+
+#container #content #images .item .no {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#container #content #content_footer {
+  overflow:hidden;
+  width: 80%;
+  padding: 0 10%;
+  border-top: 1px solid #474a51;
+  position: relative;
+  text-align: justify;
+}
+
+#container #content #content_footer #left {
+  width: 40%;
+  float: left;
+  clear: right;
+  margin-right: 10%;
+  z-index: 1000;
+  background: url("images/home_services_bg_design.gif") right bottom no-repeat;
+  padding-bottom: 50px;
+}
+
+#container #content #content_footer #left p {
+  margin-top: 5px;
+}
+#container #content #content_footer #right {
+  width: 40%;
+  float: right;
+  clear: none;
+  margin-left: 10%;
+  background: url("images/home_services_bg_marketing.gif") left top no-repeat;
+}
+#container #content #content_footer #right p {
+  margin-top: 40px;
+}
+
+#container #footer {
+  height: 90px;
+  border-top: 1px solid #474a51;
+  text-align: center;
+  padding-top: 5px;
+  background-color: #24262a;
+}
+
+#container #footer img {
+
+}
+
+

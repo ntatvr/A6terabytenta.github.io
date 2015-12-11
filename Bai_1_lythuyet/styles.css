@@ -1,0 +1,112 @@
+body {
+  font-family: Geogria, 'Times New Roman', Times, serif;
+}
+p , h3{
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #0d22ff;
+}
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  border: 1px solid #0033FF;
+  overflow: auto;
+}
+
+#container #title  {
+  height: 25px;
+  background: url('images/title_background.gif') repeat;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+#container #information {
+  padding-top: 2px;
+  margin-bottom: 15px;
+  height: 100px;
+  line-height: 18px;
+  font-size: 17px;
+}
+
+#container #information img {
+  float: left;
+  clear: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+#container #information .information {
+  clear: right;
+  overflow:scroll;
+  height: 100%;
+}
+
+#container .title_facts {
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+#container .facts img {
+  margin-right: 5px;
+}
+
+#container .facts li {
+  font-size: 17.5px;
+  list-style-type: none;
+  line-height: 18px;
+}
+
+#container #comment-wrap {
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+#container #comment-wrap .comment {
+  background: #ECECEC;
+  padding: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 1px;
+}
+
+#container #comment-wrap .posts {
+  padding-left: 20px;
+}
+
+#container #comment-wrap .posts img {
+ float: left;
+ clear: right;
+ margin-top: -3px;
+ margin-right: 7px;
+}
+
+#container #your_comment {
+  margin-top: 15px;
+  padding: 5px;
+}
+
+#container #your_comment h3 {
+  text-align:center;
+}
+
+#container #your_comment table .td1 {
+  width: 23%;
+}
+
+#container #your_comment table .td2 {
+  width: 77%;
+}
+
+#container #your_comment table input {
+  width: 38%;
+  height: 20px;
+}
+
+#container #your_comment table textarea {
+  width: 99%;
+}
+
