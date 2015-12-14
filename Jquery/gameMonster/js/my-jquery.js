@@ -17,7 +17,7 @@ $(document).ready(function() {
 	var booleanGameOver = false;
 
 	if (typeof(Storage) !== "underfined") {
-		if(!sessionStorage.getItem("highScore")){
+		if (!sessionStorage.getItem("highScore")){
 			sessionStorage.setItem("highScore", highScore);
 		} else {
 			bestScore = sessionStorage.getItem("highScore");
@@ -145,7 +145,7 @@ $(document).ready(function() {
 		function movie monster
 		*/
 		var animate = function(monster) {
-			if(running) {
+			if (running) {
 				showMonster(monster);
 				monster.id.animate({ 
 					"left" : monster.stopY, 
@@ -160,7 +160,7 @@ $(document).ready(function() {
 						drawMonster(monster);
 						checkMonsterShow();
 						setTimeout(function() {
-							if(booleanRandomMonster && sumMonsterShow <= numberMonster) {
+							if (booleanRandomMonster && sumMonsterShow <= numberMonster) {
 								for(var i = 0; i< numberMonster; i++) {
 									randomMonster();
 									sumMonsterShow++;
@@ -173,7 +173,7 @@ $(document).ready(function() {
 		}	
 
 		var checkMonsterShow = function() {
-			if(!monsterOne.show && !monsterTwo.show && !monsterThree.show && !monsterFour.show && !monsterFive.show && !monsterSix.show && !monsterSeven.show && !monsterEight.show) {
+			if (!monsterOne.show && !monsterTwo.show && !monsterThree.show && !monsterFour.show && !monsterFive.show && !monsterSix.show && !monsterSeven.show && !monsterEight.show) {
 				booleanRandomMonster = true;
 			} else {
 				booleanRandomMonster = false;
@@ -185,42 +185,42 @@ $(document).ready(function() {
 			console.log(value);
 			switch(value) {
 				case 1:
-				if(monsterOne.show != true) {
+				if (monsterOne.show != true) {
 					animate(monsterOne);
 					break;
 				}
 				case 2:
-				if(monsterTwo.show != true) {
+				if (monsterTwo.show != true) {
 					animate(monsterTwo);
 					break;
 				}
 				case 3:
-				if(monsterThree.show != true) {
+				if (monsterThree.show != true) {
 					animate(monsterThree);
 					break;
 				}
 				case 4:
-				if(monsterFour.show != true) {
+				if (monsterFour.show != true) {
 					animate(monsterFour);
 					break;
 				}
 				case 5:
-				if(monsterFive.show != true) {
+				if (monsterFive.show != true) {
 					animate(monsterFive);
 					break;
 				}
 				case 6:
-				if(monsterSix.show != true) {
+				if (monsterSix.show != true) {
 					animate(monsterSix);
 					break;
 				}
 				case 7:
-				if(monsterSeven.show != true) {
+				if (monsterSeven.show != true) {
 					animate(monsterSeven);
 					break;
 				}
 				case 8:
-				if(monsterEight.show != true) {
+				if (monsterEight.show != true) {
 					animate(monsterEight);
 					break;
 				}
@@ -229,7 +229,7 @@ $(document).ready(function() {
 
 
 		var clickMonster = function(monster, e) {
-			if(!booleanPause && !booleanGameOver) {
+			if (!booleanPause && !booleanGameOver) {
 				hideMonster(monster);
 				drawMonster(monster);
 				monster.id.finish();
@@ -278,17 +278,17 @@ $(document).ready(function() {
 		});
 
 		divScreen.click(function() {
-			if(!booleanPause) {
+			if (!booleanPause) {
 				heart--;
 				drawAllHeart();
-				if(heart == 0) {
+				if (heart == 0) {
 					gameOver();
 				}
 			}
 		});
 
 		$("#btnBoom").click(function() {
-			if(!booleanPause && numberBoom > 0) {
+			if (!booleanPause && numberBoom > 0) {
 				numberBoom--;
 				killAllMonster();
 				setNumberBoom();
@@ -296,9 +296,9 @@ $(document).ready(function() {
 		})
 
 		$("#btnPause").click(function() {
-			if(!booleanGameOver) {
+			if (!booleanGameOver) {
 				count++;
-				if(count % 2 == 1) {
+				if (count % 2 == 1) {
 					pauseMonster();
 					pause();
 					booleanPause = true;
@@ -382,193 +382,193 @@ $(document).ready(function() {
 		}
 
 		var pauseMonster = function() {
-			if(monsterOne.id.is(":visible")) {
+			if (monsterOne.id.is(":visible")) {
 				monsterOne.id.pause();
 			}
 
-			if(monsterTwo.id.is(":visible")) {
+			if (monsterTwo.id.is(":visible")) {
 				monsterTwo.id.pause();
 			}
 
-			if(monsterThree.id.is(":visible")) {
+			if (monsterThree.id.is(":visible")) {
 				monsterThree.id.pause();
 			}
 
-			if(monsterFour.id.is(":visible")) {
+			if (monsterFour.id.is(":visible")) {
 				monsterFour.id.pause();
 			}
 
-			if(monsterFive.id.is(":visible")) {
+			if (monsterFive.id.is(":visible")) {
 				monsterFive.id.pause();
 			}
 
-			if(monsterSix.id.is(":visible")) {
+			if (monsterSix.id.is(":visible")) {
 				monsterSix.id.pause();
 			}
 
-			if(monsterSeven.id.is(":visible")) {
+			if (monsterSeven.id.is(":visible")) {
 				monsterSeven.id.pause();
 			}
 
-			if(monsterEight.id.is(":visible")) {
+			if (monsterEight.id.is(":visible")) {
 				monsterEight.id.pause();
 			}
 		}
 
 		var resumeMonster = function() {
-			if(monsterOne.id.is(":visible")) {
+			if (monsterOne.id.is(":visible")) {
 				monsterOne.id.resume();
 			}
 
-			if(monsterTwo.id.is(":visible")) {
+			if (monsterTwo.id.is(":visible")) {
 				monsterTwo.id.resume();
 			}
 
-			if(monsterThree.id.is(":visible")) {
+			if (monsterThree.id.is(":visible")) {
 				monsterThree.id.resume();
 			}
 
-			if(monsterFour.id.is(":visible")) {
+			if (monsterFour.id.is(":visible")) {
 				monsterFour.id.resume();
 			}
 
-			if(monsterFive.id.is(":visible")) {
+			if (monsterFive.id.is(":visible")) {
 				monsterFive.id.resume();
 			}
 
-			if(monsterSix.id.is(":visible")) {
+			if (monsterSix.id.is(":visible")) {
 				monsterSix.id.resume();
 			}
 
-			if(monsterSeven.id.is(":visible")) {
+			if (monsterSeven.id.is(":visible")) {
 				monsterSeven.id.resume();
 			}
 
-			if(monsterEight.id.is(":visible")) {
+			if (monsterEight.id.is(":visible")) {
 				monsterEight.id.resume();
 			}
 		}
 
 		var hideAllMonster = function() {
 			running = false;
-			if(monsterOne.id.is(":visible")) {
+			if (monsterOne.id.is(":visible")) {
 				monsterOne.id.stop();
 			}
 
-			if(monsterTwo.id.is(":visible")) {
+			if (monsterTwo.id.is(":visible")) {
 				monsterTwo.id.stop();
 			}
 
-			if(monsterThree.id.is(":visible")) {
+			if (monsterThree.id.is(":visible")) {
 				monsterThree.id.stop();
 			}
 
-			if(monsterFour.id.is(":visible")) {
+			if (monsterFour.id.is(":visible")) {
 				monsterFour.id.stop();
 			}
 
-			if(monsterFive.id.is(":visible")) {
+			if (monsterFive.id.is(":visible")) {
 				monsterFive.id.stop();
 			}
 
-			if(monsterSix.id.is(":visible")) {
+			if (monsterSix.id.is(":visible")) {
 				monsterSix.id.stop();
 			}
 
-			if(monsterSeven.id.is(":visible")) {
+			if (monsterSeven.id.is(":visible")) {
 				monsterSeven.id.stop();
 			}
 
-			if(monsterEight.id.is(":visible")) {
+			if (monsterEight.id.is(":visible")) {
 				monsterEight.id.stop();
 			}
 		}
 
 		var disableAllMonster = function() {
-			if(monsterOne.id.is(":visible")) {
+			if (monsterOne.id.is(":visible")) {
 				monsterOne.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterTwo.id.is(":visible")) {
+			if (monsterTwo.id.is(":visible")) {
 				monsterTwo.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterThree.id.is(":visible")) {
+			if (monsterThree.id.is(":visible")) {
 				monsterThree.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterFour.id.is(":visible")) {
+			if (monsterFour.id.is(":visible")) {
 				monsterFour.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterFive.id.is(":visible")) {
+			if (monsterFive.id.is(":visible")) {
 				monsterFive.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterSix.id.is(":visible")) {
+			if (monsterSix.id.is(":visible")) {
 				monsterSix.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterSeven.id.is(":visible")) {
+			if (monsterSeven.id.is(":visible")) {
 				monsterSeven.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 
-			if(monsterEight.id.is(":visible")) {
+			if (monsterEight.id.is(":visible")) {
 				monsterEight.id.attr("disabled", "disabled").css("opacity", "0.5");
 			}
 		}
 
 		var killAllMonster = function() {
-			if(monsterOne.id.is(":visible") && monsterOne.show) {
+			if (monsterOne.id.is(":visible") && monsterOne.show) {
 				getLocationDie(monsterOne);
 				setTimeout(function() {
 					monsterOne.id.finish();
 				}, 1);
 			}
 
-			if(monsterTwo.id.is(":visible") && monsterTwo.show) {
+			if (monsterTwo.id.is(":visible") && monsterTwo.show) {
 				getLocationDie(monsterTwo);
 				setTimeout(function() {
 					monsterTwo.id.finish();
 				}, 1);
 			}
 
-			if(monsterThree.id.is(":visible") && monsterThree.show) {
+			if (monsterThree.id.is(":visible") && monsterThree.show) {
 				getLocationDie(monsterThree);
 				setTimeout(function() {
 					monsterThree.id.finish();
 				}, 1);
 			}
 
-			if(monsterFour.id.is(":visible") && monsterFour.show) {
+			if (monsterFour.id.is(":visible") && monsterFour.show) {
 				getLocationDie(monsterFour);
 				setTimeout(function() {
 					monsterFour.id.finish();
 				}, 1);
 			}
 
-			if(monsterFive.id.is(":visible") && monsterFive.show) {
+			if (monsterFive.id.is(":visible") && monsterFive.show) {
 				getLocationDie(monsterFive);
 				setTimeout(function() {
 					monsterFive.id.finish();
 				}, 1);
 			}
 
-			if(monsterSix.id.is(":visible") && monsterSix.show) {
+			if (monsterSix.id.is(":visible") && monsterSix.show) {
 				getLocationDie(monsterSix);
 				setTimeout(function() {
 					monsterSix.id.finish();
 				}, 1);
 			}
 
-			if(monsterSeven.id.is(":visible") && monsterSeven.show) {
+			if (monsterSeven.id.is(":visible") && monsterSeven.show) {
 				getLocationDie(monsterSeven);
 				setTimeout(function() {
 					monsterSeven.id.finish();
 				}, 1);
 			}
 
-			if(monsterEight.id.is(":visible") && monsterEight.show) {
+			if (monsterEight.id.is(":visible") && monsterEight.show) {
 				getLocationDie(monsterEight);
 				setTimeout(function() {
 					monsterEight.id.finish();
@@ -629,7 +629,7 @@ $(document).ready(function() {
 
 		var gameOver = function() {
 			var bestScore = parseInt(sessionStorage.getItem("highScore"));
-			if(score > bestScore) {
+			if (score > bestScore) {
 				sessionStorage.setItem("highScore", score);
 			}
 			booleanGameOver = true;
@@ -657,7 +657,7 @@ $(document).ready(function() {
 		}
 
 		var main = function() {
-			if(running) {
+			if (running) {
 				showMonster(monsterOne);
 				animate(monsterOne);
 			}

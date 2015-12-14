@@ -21,42 +21,42 @@ var checkEmail = false;
 		errorUsername.innerHTML = "";
 		errorPassword.innerHTML = "";
 		errorEmail.innerHTML = "";
-		if(isNull(username.value) && isNull(password.value) && isNull(email.value)) {
+		if (isNull(username.value) && isNull(password.value) && isNull(email.value)) {
 			username.style.background = "#FDEDEC";
 			password.style.background = "#FDEDEC";
 			email.style.background = "#FDEDEC";
 		} else {
 			setDefaultBackground(username, password, email, birthday);
-			if(isNull(username.value)) {
+			if (isNull(username.value)) {
 				username.style.background = "#FDEDEC";
-			} else if(!checkLength(username.value)) {
+			} else if (!checkLength(username.value)) {
 				errorUsername.innerHTML = "Username length min 8 letter";
-			} else if(!checkValidate(username.value)) {
+			} else if (!checkValidate(username.value)) {
 				errorUsername.innerHTML = "Username wrong format";
 			} else {
 				checkUsername = true;
 			}	
 
-			if(isNull(password.value)) {
+			if (isNull(password.value)) {
 				password.style.background = "#FDEDEC";
-			} else if(!checkLength(password.value)) {
+			} else if (!checkLength(password.value)) {
 				errorPassword.innerHTML = "Password length min 8 letter";
-			} else if(!checkValidate(password.value)) {
+			} else if (!checkValidate(password.value)) {
 				errorPassword.innerHTML = "Password wrong format";
 			} else {
 				checkPassword = true;
 			}
 
-			if(isNull(email.value)) {
+			if (isNull(email.value)) {
 				email.style.background = "#FDEDEC";
-			} else if(!checkValidateEmail(email.value)) {
+			} else if (!checkValidateEmail(email.value)) {
 				errorEmail.innerHTML = "Email wrong format";
 			} else {
 				checkEmail = true;
 			}
 		}
 
-		if(checkUsername && checkPassword && checkEmail) {
+		if (checkUsername && checkPassword && checkEmail) {
 			callAjax("http://192.168.1.131:8080/NguyenTuanAnh/Exercises/JavaScript/formAjax/test.php", username.value);
 		}
 	}
@@ -70,7 +70,7 @@ var checkEmail = false;
 
 	function callAjax(url, username) {
 		httpRequest = new XMLHttpRequest();
-		if(!httpRequest) {
+		if (!httpRequest) {
 			alert("Khong the khoi tao XMLHttpRequest");
 			return false;
 		}
@@ -81,11 +81,11 @@ var checkEmail = false;
 	}
 
 	function alertContents() {
-		if(httpRequest.readyState === XMLHttpRequest.DONE) {
-			if(httpRequest.status === 200) {
+		if (httpRequest.readyState === XMLHttpRequest.DONE) {
+			if (httpRequest.status === 200) {
 				console.log(httpRequest.responseText);
 				var results = document.getElementById("results");
-				if(httpRequest.responseText == "true") {
+				if (httpRequest.responseText == "true") {
 					results.innerHTML = "Username is empty";
 					results.style.color = "##E74C3C";
 				} else {
@@ -99,8 +99,8 @@ var checkEmail = false;
 	}
 
 	function checkUsernameIsEmpty(username) {
-		for(var i = 0; i < listUsername.length; i++) {
-			if(listUsername[i] == username) {
+		for (var i = 0; i < listUsername.length; i++) {
+			if (listUsername[i] == username) {
 				return true;
 			}
 		}
@@ -108,7 +108,7 @@ var checkEmail = false;
 	}
 
 	function isNull(text) {
-		if(text == null || text == "") {
+		if (text == null || text == "") {
 			return true;
 		}
 		return false;
@@ -120,7 +120,7 @@ var checkEmail = false;
 	}
 
 	function checkLength(text) {
-		if(text.length < 8) {
+		if (text.length < 8) {
 			return false;
 		}
 		return true;

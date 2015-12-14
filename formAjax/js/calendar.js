@@ -34,12 +34,12 @@ function init() {
 		document.write("<TD CLASS='btn' onClick='btnPreviousYearClick();'><a TYPE='a' NAME='btnPreviousYear'>&#8647;</a></TD>");
 		document.write("<TD CLASS='btn' onClick='btnPreviousMonthClick();'><a TYPE='a' NAME='btnPreviousMonth'>&larr;</a></TD>");
 		document.write("<TD CLASS='btn' colspan='2'><SELECT ID='months' onChange='changeMonth();'>");
-		for(var i = 0; i < months.length; i++) {
+		for (var i = 0; i < months.length; i++) {
 			document.write("<OPTION VALUE='" + i + "'>" + months[i] + "</OPTION>")
 		};
 		document.write("</SELECT></TD>")
 		document.write("<TD CLASS='btn' colspan='1'><SELECT ID='years' onChange='changeYear();'>");
-		for(var i = 1900; i <= 2025; i++) {
+		for (var i = 1900; i <= 2025; i++) {
 			document.write("<OPTION VALUE='" + i + "'>" + i + "</OPTION>")
 		};
 		document.write("</SELECT></TD>")
@@ -53,9 +53,9 @@ function init() {
 	*/
 	function drawCalendar(month, year) {
 		var count = 1;
-		for(var i = 0; i < 6; i++) {
+		for (var i = 0; i < 6; i++) {
 			document.write("<TR onclick='cancelCalendar();'>");
-			for(var j = 0; j < 7; j++) {
+			for (var j = 0; j < 7; j++) {
 				document.write("<TD ID='item" + count + "' CLASS='item' onClick='checkDay(" + count + ");'></TD>");		
 				count++;		
 			};
@@ -70,7 +70,7 @@ function init() {
 	erase all value in calendar 
 	*/
 	function erase() {
-		for(var i = 1; i <= 42; i++) {
+		for (var i = 1; i <= 42; i++) {
 			document.getElementById("item" + i).innerHTML = "";
 			document.getElementById("item" + i).style.background = "none";
 		}
@@ -88,17 +88,17 @@ function init() {
 		var previous_month = monthCheck - 1;
 		var next_month = monthCheck + 1;
 
-		if(((yearCheck % 4 == 0) && (yearCheck % 100 != 0)) || (yearCheck % 400 == 0)) {
+		if (((yearCheck % 4 == 0) && (yearCheck % 100 != 0)) || (yearCheck % 400 == 0)) {
 			numberDayOfMonth[1] = 29; 
-		}else {
+		} else {
 			numberDayOfMonth[1] = 28;
 		}
 
-		if(previous_month < 0){
+		if (previous_month < 0){
 			previous_month = 11;
 		}
 
-		if(next_month == 12){
+		if (next_month == 12){
 			next_month = 0;
 		}
 		var numberDay = numberDayOfMonth[monthCheck];
@@ -114,16 +114,16 @@ function init() {
 		var positionStart = day;
 		var positionStop = (parseInt(numberDay) + parseInt(day));
 
-		for(var i = 0; i < 6; i++) {
-			for(var j = 0; j < 7; j++) {
-				if(count >= day) {
+		for (var i = 0; i < 6; i++) {
+			for (var j = 0; j < 7; j++) {
+				if (count >= day) {
 					check = true;
 				}
-				if(check == true && position <= numberDay) {
+				if (check == true && position <= numberDay) {
 					console.log("date: "+ (position + day));
 					document.getElementById("item" + (position + day)).innerHTML = position;
 					document.getElementById("item" + (position + day)).style.background = "#FBFCFC";
-					if(dateNow == position && month_now == monthCheck && yearNow == yearCheck) {
+					if (dateNow == position && month_now == monthCheck && yearNow == yearCheck) {
 						document.getElementById("item" + (position + day)).style.background = "#00ace6";
 						positionDateNow = "item" + (position + day);
 					}
@@ -133,12 +133,12 @@ function init() {
 				count++;
 			}
 		}
-		for(var i = positionStart; i > 0; i--) {
+		for (var i = positionStart; i > 0; i--) {
 			console.log("i: "+i);
 			document.getElementById("item" + (i)).innerHTML = numberDayOfPreviousMonth--;
 			document.getElementById("item" + (i)).style.color = "#000";
 		}
-		for(var j = 1; j <= (42 - positionStop); j++) {
+		for (var j = 1; j <= (42 - positionStop); j++) {
 			console.log("j: "+ (j + positionStop));
 			document.getElementById("item" + (j + positionStop)).innerHTML = j;
 			document.getElementById("item" + (j + positionStop)).style.color = "#000";
@@ -152,21 +152,21 @@ function init() {
 		var year = yearCheck;
 		var day = document.getElementById("item" + position).innerHTML;
 
-		if(previous_month == 0) {
+		if (previous_month == 0) {
 			previous_month = 12;
 		}
 
-		if(next_month == 13) {
+		if (next_month == 13) {
 			next_month = 1;
 		}
 
-		if(parseInt(day) > position) {
-			if(previous_month == 12) {
+		if (parseInt(day) > position) {
+			if (previous_month == 12) {
 				year--;
 			}
 			var results = day + "/" + previous_month + "/" + year;
 		} else if (parseInt(day) < (position - positionDayOne)) {
-			if(next_month == 1) {
+			if (next_month == 1) {
 				year++;
 			}
 			var results = day + "/" + next_month + "/" + year;
@@ -205,7 +205,7 @@ function init() {
 	function btnPreviousMonthClick() {
 		erase();
 		monthCheck = monthCheck - 1;
-		if(monthCheck < 0) {
+		if (monthCheck < 0) {
 			monthCheck = 11;
 			yearCheck = yearCheck - 1;
 		}
@@ -221,7 +221,7 @@ function init() {
 	function btnNextMonthClick() {
 		erase();
 		monthCheck = monthCheck + 1;
-		if(monthCheck > 11) {
+		if (monthCheck > 11) {
 			monthCheck = 0;
 			yearCheck = yearCheck + 1;
 		}
@@ -257,7 +257,7 @@ function init() {
 
 	function drawDay() {
 		document.write("<TR ID='title'>");
-		for(var i = 0; i < day.length; i++) {
+		for (var i = 0; i < day.length; i++) {
 			document.write("<TD>" + day[i] + "</TD>");
 		};
 		document.write("</TR>");

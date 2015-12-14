@@ -76,14 +76,14 @@ $(document).ready(function(){
 			checkEmail = true;
 		}
 
-		if(checkUsername && checkPassword && checkEmail) {
+		if (checkUsername && checkPassword && checkEmail) {
 			console.log("call ajax");
 			$.ajax({
 				method: "GET",
 				url: "test.php?username=" + username.val(),
 				dateType: "html"
 			}).done(function(messenger) {
-				if(messenger == "true") {
+				if (messenger == "true") {
 					$("#results").html("Username is Emplty");
 					$("#results").css({
 						color: "rgb(249,127,127)",
