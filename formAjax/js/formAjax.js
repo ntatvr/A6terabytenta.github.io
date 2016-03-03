@@ -27,11 +27,11 @@ var checkEmail = false;
 			email.style.background = "#FDEDEC";
 		} else {
 			setDefaultBackground(username, password, email, birthday);
-			if (isNull(username.value)) {
+			if(isNull(username.value)) {
 				username.style.background = "#FDEDEC";
-			} else if (!checkLength(username.value)) {
+			} else if(!checkLength(username.value)) {
 				errorUsername.innerHTML = "Username length min 8 letter";
-			} else if (!checkValidate(username.value)) {
+			} else if(!checkValidate(username.value)) {
 				errorUsername.innerHTML = "Username wrong format";
 			} else {
 				checkUsername = true;
@@ -100,7 +100,7 @@ var checkEmail = false;
 
 	function checkUsernameIsEmpty(username) {
 		for (var i = 0; i < listUsername.length; i++) {
-			if (listUsername[i] == username) {
+			if(listUsername[i] == username) {
 				return true;
 			}
 		}
@@ -108,7 +108,7 @@ var checkEmail = false;
 	}
 
 	function isNull(text) {
-		if (text == null || text == "") {
+		if(text == null || text == "") {
 			return true;
 		}
 		return false;

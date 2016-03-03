@@ -55,7 +55,7 @@ function init() {
 		var count = 1;
 		for (var i = 0; i < 6; i++) {
 			document.write("<TR onclick='cancelCalendar();'>");
-			for (var j = 0; j < 7; j++) {
+			for(var j = 0; j < 7; j++) {
 				document.write("<TD ID='item" + count + "' CLASS='item' onClick='checkDay(" + count + ");'></TD>");		
 				count++;		
 			};
@@ -123,7 +123,7 @@ function init() {
 					console.log("date: "+ (position + day));
 					document.getElementById("item" + (position + day)).innerHTML = position;
 					document.getElementById("item" + (position + day)).style.background = "#FBFCFC";
-					if (dateNow == position && month_now == monthCheck && yearNow == yearCheck) {
+					if(dateNow == position && month_now == monthCheck && yearNow == yearCheck) {
 						document.getElementById("item" + (position + day)).style.background = "#00ace6";
 						positionDateNow = "item" + (position + day);
 					}
@@ -161,12 +161,12 @@ function init() {
 		}
 
 		if (parseInt(day) > position) {
-			if (previous_month == 12) {
+			if(previous_month == 12) {
 				year--;
 			}
 			var results = day + "/" + previous_month + "/" + year;
 		} else if (parseInt(day) < (position - positionDayOne)) {
-			if (next_month == 1) {
+			if(next_month == 1) {
 				year++;
 			}
 			var results = day + "/" + next_month + "/" + year;
