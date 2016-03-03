@@ -84,10 +84,6 @@
 	height: 100%;
 }
 
-#calendar #rowAction {
-	display: flex;
-}
-
 #calendar .btn {
 	border: 1px solid #909497;
 	font-size: 15px;
