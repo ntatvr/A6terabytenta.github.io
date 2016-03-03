@@ -18,7 +18,6 @@ function init() {
 	document.write("<DIV ID='calendar' STYLE='display:none;'>")
 	document.write("<FORM>");
 	document.write("<TABLE ID='table' STYLE='text-align: center;'>");
-	this.drawRowAction();
 	this.drawDay();
 	this.drawCalendar(dateNow.getMonth(), dateNow.getFullYear());
 	document.write("</TABLE>");
@@ -30,7 +29,7 @@ function init() {
 	create: button previous year, button next year, button previous month, button next month, select month and select year
 	*/
 	function drawRowAction() {
-		document.write("<THEAD><TR ID='rowAction'>");
+		document.write("<TR ID='rowAction'>");
 		document.write("<TD CLASS='btn' onClick='btnPreviousYearClick();'><a TYPE='a' NAME='btnPreviousYear'>&#8647;</a></TD>");
 		document.write("<TD CLASS='btn' onClick='btnPreviousMonthClick();'><a TYPE='a' NAME='btnPreviousMonth'>&larr;</a></TD>");
 		document.write("<TD CLASS='btn' colspan='2'><SELECT ID='months' onChange='changeMonth();'>");
@@ -45,7 +44,7 @@ function init() {
 		document.write("</SELECT></TD>")
 		document.write("<TD CLASS='btn' onClick='btnNextMonthClick();'><a TYPE='a' NAME='btnNextMonth'>&rarr;</a></TD>");
 		document.write("<TD CLASS='btn' onClick='btnNextYearClick();'><a TYPE='a' NAME='btnNextYear' >&#8649;</a></TD>");
-		document.write("</TR></THEAD>");
+		document.write("</TR>");
 	}
 
 /*
@@ -256,6 +255,7 @@ function init() {
 	}
 
 	function drawDay() {
+		this.drawRowAction();
 		document.write("<TR ID='title'>");
 		for (var i = 0; i < day.length; i++) {
 			document.write("<TD>" + day[i] + "</TD>");
