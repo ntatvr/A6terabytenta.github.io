@@ -30,7 +30,7 @@ function init() {
 	create: button previous year, button next year, button previous month, button next month, select month and select year
 	*/
 	function drawRowAction() {
-		document.write("<TR ID='rowAction'>");
+		document.write("<THEAD><TR ID='rowAction'>");
 		document.write("<TD CLASS='btn' onClick='btnPreviousYearClick();'><a TYPE='a' NAME='btnPreviousYear'>&#8647;</a></TD>");
 		document.write("<TD CLASS='btn' onClick='btnPreviousMonthClick();'><a TYPE='a' NAME='btnPreviousMonth'>&larr;</a></TD>");
 		document.write("<TD CLASS='btn' colspan='2'><SELECT ID='months' onChange='changeMonth();'>");
@@ -45,7 +45,7 @@ function init() {
 		document.write("</SELECT></TD>")
 		document.write("<TD CLASS='btn' onClick='btnNextMonthClick();'><a TYPE='a' NAME='btnNextMonth'>&rarr;</a></TD>");
 		document.write("<TD CLASS='btn' onClick='btnNextYearClick();'><a TYPE='a' NAME='btnNextYear' >&#8649;</a></TD>");
-		document.write("</TR>");
+		document.write("</TR></THEAD>");
 	}
 
 /*
